@@ -75,6 +75,13 @@ TEMPLATES = [
     },
 ]
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hajencmzq',
+    'API_KEY': '162125384956411',
+    'API_SECRET': 'cUshnxQxrDMfvRCbr4RWV8NrOHE'
+}
+
+
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
