@@ -8,6 +8,16 @@ body {
   background: rgb(231, 231, 231);
 }
 
+.notable{
+  display: block !important;
+  tr{
+    display: block !important;
+    th,td{
+      display: block !important;
+    }
+  }
+}
+
 a{
   word-break: break-all;
 }
@@ -90,8 +100,7 @@ width: 100%;
 .modalContainer {
 
   .btn {
-    padding:0;
-
+    margin-top: 1em !important;
     &:hover {
       background: #ddd;
     }
@@ -100,9 +109,9 @@ width: 100%;
     text-align: center;
   }
   .btn-close{
-    margin-top: 1em !important;
     padding: .8em;
     margin: 0 auto;
+    background: rgb(104, 104, 104);
   }
 
   //modal

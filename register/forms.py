@@ -76,7 +76,6 @@ class UserUpdateForm(forms.ModelForm):
 
 class MyPasswordChangeForm(PasswordChangeForm):
     """パスワード変更フォーム"""
-    id_email = forms.CharField(label="あ")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -34,7 +34,7 @@
                                     <li>
                                         <ul class="ul">
                                             <li class="menu-li">
-                                                <a class="menu-list" href="{% url 'register:user_detail' user.pk %}">ユーザー情報閲覧</a>
+                                                <a class="menu-list" href="{% url 'register:user_detail' user.pk %}">プロフィール</a>
                                             </li>
                                             <li class="menu-li">
                                                 <a class="menu-list" href="{% url 'register:user_update' user.pk %}">ユーザー情報更新</a>
@@ -88,10 +88,10 @@
                             </ul>
                         </li>
                         <li class="treeview">
-                            <a class="accordion jsBtn" href="#"><span>設定</span></a>
+                            <a class="accordion jsBtn" href="#"><span>アカウント設定</span></a>
                             <ul class="panel">
                                 <li class="menu-li">
-                                    <a class="menu-list" href="{% url 'register:user_detail' user.pk %}">ユーザー情報閲覧</a>
+                                    <a class="menu-list" href="{% url 'register:user_detail' user.pk %}">プロフィール</a>
                                 </li>
                                 <li class="menu-li">
                                     <a class="menu-list" href="{% url 'register:user_update' user.pk %}">ユーザー情報更新</a>
@@ -101,6 +101,20 @@
                                 </li>
                                 <li class="menu-li">
                                     <a class="menu-list" href="{% url 'register:email_change' %}">メールアドレスの変更</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a class="accordion jsBtn" href="#"><span>環境設定</span></a>
+                            <ul class="panel">
+                                <li class="menu-li">
+                                    <a class="menu-list" href="{% url 'register:user_detail' user.pk %}">通知設定</a>
+                                </li>
+                                <li class="menu-li">
+                                    <a class="menu-list" href="{% url 'register:user_update' user.pk %}">表示設定</a>
+                                </li>
+                                <li class="menu-li">
+                                    <a class="menu-list" href="{% url 'register:password_change' %}">Lifeについて</a>
                                 </li>
                             </ul>
                         </li>
