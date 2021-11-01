@@ -9,6 +9,11 @@
     </div>
   </div>
 
+<form method="GET" action="{% url 'app:index' %}">
+  <input type="text" name="keyword" placeholder="新しい発見で検索する">
+  <button type="submit">検索</button>
+</form>
+
   <div class="fb indexFb">
   {% for memo in memos %}
   <div class="card">

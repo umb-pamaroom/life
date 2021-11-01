@@ -8,6 +8,11 @@
   </div>
 </div>
 
+<form method="GET" action="{% url 'app:meal_list' %}">
+  <input type="text" name="keyword" placeholder="食事名で検索する">
+  <button type="submit">検索</button>
+</form>
+
 <div class="fb indexFb modalContainer">
   {% for memo in memos %}
     <div class="card p0">

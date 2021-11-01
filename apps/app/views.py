@@ -6,13 +6,21 @@ from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from django.contrib import messages
+from django.db.models import Q
 
 @login_required
 def index(request):
 
   # 投稿の並び順を制御する
   memos = Memo.objects.all().order_by('-dateData')
+  keyword = request.GET.get('keyword')
+
+  if keyword:
+      memos = memos.filter(
+          Q(discovery__icontains=keyword)
+      )
+      messages.success(request, '「{}」の検索結果'.format(keyword))
   return render(request, 'app/index.html', {'memos': memos})
 
 
@@ -57,6 +65,14 @@ def new_memo(request):
 def meal_list(request):
   # 投稿の並び順を制御する
   memos = Memo.objects.all().order_by('-dateData')
+  keyword = request.GET.get('keyword')
+
+  if keyword:
+      memos = memos.filter(
+          Q(breakfastName__icontains=keyword) | Q(lunchName__icontains=keyword) | Q(dinnerName__icontains=keyword)
+      )
+      messages.success(request, '「{}」の検索結果'.format(keyword))
+
   return render(request, 'app/meal_list.html', {'memos': memos})
 
 
