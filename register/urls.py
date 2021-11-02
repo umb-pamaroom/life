@@ -27,6 +27,8 @@ urlpatterns = [
     path('email/change/done/', views.EmailChangeDone.as_view(), name='email_change_done'),
     path('email/change/complete/<str:token>/', views.EmailChangeComplete.as_view(), name='email_change_complete'),
 
+    # テーマ変更
+    path('theme/<int:pk>/', views.ThemeUpdate.as_view(), name='theme'),
 
     path('diary/', include('apps.app.urls')),
 ]

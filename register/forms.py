@@ -74,6 +74,21 @@ class UserUpdateForm(forms.ModelForm):
             field.widget.attrs['class'] = 'form-control'
 
 
+class  ThemeUpdateForm(forms.ModelForm):
+    """テーマ更新フォーム"""
+
+    class Meta:
+        model = User
+        fields = ('theme',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # 「:」を削除
+        self.label_suffix = ""
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+
+
 class MyPasswordChangeForm(PasswordChangeForm):
     """パスワード変更フォーム"""
 

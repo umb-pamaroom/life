@@ -9,12 +9,12 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.core.signing import BadSignature, SignatureExpired, loads, dumps
 from django.http import HttpResponseBadRequest
-from django.shortcuts import redirect, resolve_url
+from django.shortcuts import render, redirect, resolve_url
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.views import generic
 from .forms import (
-    LoginForm, UserCreateForm, UserUpdateForm, MyPasswordChangeForm,
+    LoginForm, UserCreateForm, UserUpdateForm, ThemeUpdateForm, MyPasswordChangeForm,
     MyPasswordResetForm, MySetPasswordForm, EmailChangeForm
 )
 
@@ -225,3 +225,23 @@ class EmailChangeComplete(LoginRequiredMixin, generic.TemplateView):
             request.user.email = new_email
             request.user.save()
             return super().get(request, **kwargs)
+
+
+class UserUpdate(OnlyYouMixin, generic.UpdateView):
+    """ユーザー情報更新ページ"""
+    model = User
+    form_class = UserUpdateForm
+    template_name = 'register/user_form.html'  # デフォルトユーザーを使う場合に備え、きちんとtemplate名を書く
+
+    def get_success_url(self):
+        return resolve_url('register:user_detail', pk=self.kwargs['pk'])
+
+
+class ThemeUpdate(OnlyYouMixin, generic.UpdateView):
+    """ユーザー情報更新ページ"""
+    model = User
+    form_class = ThemeUpdateForm
+    template_name = 'register/theme.html'  # デフォルトユーザーを使う場合に備え、きちんとtemplate名を書く
+
+    def get_success_url(self):
+        return resolve_url('register:theme', pk=self.kwargs['pk'])

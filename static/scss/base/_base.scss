@@ -9,7 +9,7 @@
 
 // 全体のこと
 body {
-    color: $black;
+    color: var(--text-main);
     font-size: 18px;
     @include font()
 }
@@ -533,7 +533,7 @@ img {
     // 電話のリンク
     a[href^="tel:"] {
         pointer-events: auto;
-        color: $blue;
+        color: var(--bg-main);
         text-decoration: underline;
     }
 

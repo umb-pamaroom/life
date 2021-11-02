@@ -1,6 +1,10 @@
 {% extends "app/base.html" %}
 {% block content %}
-<h2 class="fzl2">メールアドレスの変更</h2>
+<div class="heading">
+    <div>
+        <h1>メールアドレスの変更</h1>
+    </div>
+</div>
 <form action="" method="POST">
     {{ form.non_field_errors }}
     {% for field in form %}
@@ -11,6 +15,6 @@
     </div>
     {% endfor %}
     {% csrf_token %}
-    <button type="submit" class="btn btn-primary btn-lg">送信</button>
+    <button type="submit" class="btn btn-flat">変更する</button>
 </form>
 {% endblock %}

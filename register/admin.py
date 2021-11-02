@@ -39,4 +39,7 @@ class MyUserAdmin(UserAdmin):
     ordering = ('email',)
 
 
+class UserThemeAdmin(admin.ModelAdmin):
+    fields = ['color']
+
 admin.site.register(User, MyUserAdmin)

@@ -5,7 +5,7 @@ footer {
 }
 
 body {
-  background: rgb(231, 231, 231);
+  background: var(--bg-main);
 }
 
 .notable{
@@ -24,7 +24,7 @@ a{
 
 .t-link{
   text-decoration: underline;
-  color: $blue;
+  color: var(--text-link);
   &:hover{
     text-decoration: none;
   }
@@ -47,6 +47,7 @@ a{
 .card {
   padding: .8em;
   width: 25%;
+  color: var(--text-reverse);
 
   >a{
     background: rgb(255, 255, 255);
@@ -82,10 +83,11 @@ a{
 
 textarea,
 input {
-  background: #fff;
+  background: var(--bg-main);
   border: 1px solid #ccc;
   height: 200px;
   padding: .8em 1em;
+  color: var(--text-main);
 }
 
 input {
@@ -330,7 +332,7 @@ input[type="file"] {
 ::-webkit-file-upload-button {
   display: block;
   width: 100%;
-  background: $blue;
+  background: var(--bg-main);
   color: #fff;
   border:none;
   padding: .6em;
@@ -433,31 +435,9 @@ button.btn {
 
 .btn-flat {
   overflow: hidden;
-
   padding: 1.5rem 6rem;
-
-  color: #fff;
-  background: $blue;
-}
-
-.btn-flat span {
-  position: relative;
-}
-
-.btn-flat:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100px;
-  height: 100px;
-
-  content: '';
-  transition: all .5s ease-in-out;
-  transform: translateX(-80%) translateY(-25px);
-
-  border-radius: 50%;
-  background: rgb(81, 130, 238);
+  color: var(--text-main);
+  background: var(--btn-success);
 }
 
 
