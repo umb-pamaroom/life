@@ -47,10 +47,9 @@ a{
 .card {
   padding: .8em;
   width: 25%;
-  color: var(--text-reverse);
 
   >a{
-    background: rgb(255, 255, 255);
+    background: var(--bg-main);
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
     display: block;
