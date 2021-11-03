@@ -92,17 +92,6 @@ class  ThemeUpdateForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         # 「:」を削除
         self.label_suffix = ""
-        for field in self.fields.values():
-            field.widget.attrs['class'] = 'form-control'
-
-    # Theme = forms.fields.ChoiceField(
-    #     choices=(
-    #         ('white', 'ホワイト'),
-    #         ('dark', 'ダーク')
-    #     ),
-    #     required=True,
-    #     widget=forms.widgets.Select
-    # )
 
 
 

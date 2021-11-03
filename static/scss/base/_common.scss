@@ -356,6 +356,9 @@ input[type="file"] {
   max-width: 800px;
   margin: 0 auto;
 
+  .selectbox{
+    margin-bottom: 1.5em;
+  }
   p {
     display: flex;
     flex-wrap: wrap;

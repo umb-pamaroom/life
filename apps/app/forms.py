@@ -5,7 +5,7 @@ from .models import Memo
 class MemoForm(ModelForm):
     class Meta:
         model = Memo
-        fields = ['dateData', 'discovery', 'tired', 'happy', 'best', 'tomorrow', 'dislike','other', 'summarize', 'breakfast', 'breakfastName', 'lunch','lunchName', 'dinner', 'dinnerName' , 'snack', 'snackName', 'mealEvaluation', 'mealComment']
+        fields = ['dateData', 'discovery', 'tired', 'happy', 'best', 'tomorrow', 'dislike','other', 'summarize', 'breakfast', 'breakfastName', 'lunch','lunchName', 'dinner', 'dinnerName' , 'snack', 'snackName', 'mealEvaluation', 'mealComment', 'condition']
         labels = {
             'dateData': '日付',
             'discovery': '学んだこと',

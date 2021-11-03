@@ -6,6 +6,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 
 
+# 選択肢用のクラス
+class Themes(models.TextChoices):
+    WHITE = 'white', 'ホワイト'
+    DARK = 'dark', 'ダーク'
+
 class CustomUserManager(UserManager):
     """ユーザーマネージャー"""
     use_in_migrations = True
@@ -43,7 +48,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=150, blank=True)
-    theme = models.CharField(max_length=30, default="white", blank=False)
+    # 選択肢用をchoicesで追加する
+    theme = models.CharField(max_length=30, default="white", choices=Themes.choices)
 
     is_staff = models.BooleanField(
         _('staff status'),

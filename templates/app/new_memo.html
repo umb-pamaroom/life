@@ -97,12 +97,16 @@
                     <p class="p0">{{ form.snackName }}</p>
                 </div>
                 <div>
-                    <label>食事の総合評価</label>
-                    <p class="p0">{{ form.mealEvaluation }}</p>
+                    <label for="id_mealEvaluation">食事の総合評価</label>
+                    <div class="selectbox">{{ form.mealEvaluation }}</div>
                 </div>
                 <div>
-                    <label>食事へのコメント</label>
+                    <label for="id_mealComment">食事へのコメント</label>
                     <p class="p0">{{ form.mealComment }}</p>
+                </div>
+                <div>
+                    <label for="id_condition">体調</label>
+                    <div class="selectbox">{{ form.condition }}</div>
                 </div>
             </div>
         </div>

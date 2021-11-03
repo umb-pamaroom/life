@@ -6,17 +6,17 @@
     </div>
 </div>
 
-<p class="mb1">現在のテーマ：{{ user.theme }}</p>
-
 <form action="" method="POST" class="p-memo">
     {% csrf_token %}
     {% for field in form %}
         <div>
             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-            <p class="p0">{{ field }} {{ field.errors }}</p>
+            <div class="selectbox">{{ field }} {{ field.errors }}</div>
         </div>
     {% endfor %}
+    <div class="tc mt2">
     <button type="submit" class="btn btn-flat">登録する</button>
+    </div>
 </form>
 
 {% endblock %}
