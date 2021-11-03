@@ -1,0 +1,23 @@
+.search-form {
+  position: relative;
+  margin-bottom: 2em;
+
+  .fb{
+    height: 100%;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    /*アイコン左右の位置調整*/
+    top: 0;
+    color: #fff;
+    font-size: 20px;
+    /*アイコンサイズ*/
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 960px) {
+}

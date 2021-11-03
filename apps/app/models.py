@@ -14,28 +14,28 @@ class Memo(models.Model):
     # 日付
     dateData = models.DateField(default=timezone.now, blank=True)
 
-    # 新しい発見
+    # 学んだこと
     discovery = models.TextField(blank=True)
 
-    # 新しい発見
+    # 学んだこと
     tired = models.TextField(blank=True)
 
-    # 新しい発見
+    # 学んだこと
     dislike = models.TextField(blank=True)
 
-    # 新しい発見
+    # 学んだこと
     happy = models.TextField(blank=True)
 
-    # 新しい発見
+    # 学んだこと
     best = models.TextField(blank=True)
 
-    # 新しい発見
+    # 学んだこと
     tomorrow = models.TextField(blank=True)
 
-    # 新しい発見
+    # 学んだこと
     other = models.TextField(blank=True)
 
-    # 新しい発見
+    # 学んだこと
     summarize = models.TextField(blank=True)
 
     breakfast = models.ImageField(upload_to='images/breakfast/%Y/%m/%d/%s/', blank=True, null=True)
@@ -43,25 +43,20 @@ class Memo(models.Model):
     # 朝食名
     breakfastName = models.CharField(max_length=30, blank=True)
 
-    breakfastEvaluation = models.IntegerField(blank=True, default='0')
-
     lunch = models.ImageField(upload_to='images/lunch/%Y/%m/%d/%s/', blank=True, null=True)
 
     lunchName = models.CharField(max_length=30, blank=True)
-
-    lunchEvaluation = models.IntegerField(blank=True, default='0')
 
     dinner = models.ImageField(upload_to='images/dinner/%Y/%m/%d/%s/', blank=True, null=True)
 
     dinnerName = models.CharField(max_length=30, blank=True)
 
-    dinnerEvaluation = models.IntegerField(blank=True, default='0')
-
     snack = models.ImageField(upload_to='images/snack/%Y/%m/%d/%s/', blank=True, null=True)
 
     snackName = models.CharField(max_length=30, blank=True)
 
-    snackEvaluation = models.IntegerField(blank=True, default='0')
+    # 食事の総合評価
+    mealEvaluation = models.IntegerField(blank=True, default='0')
 
     # 食事へのコメント
     mealComment = models.TextField(blank=True)

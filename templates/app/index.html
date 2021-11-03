@@ -9,9 +9,9 @@
     </div>
   </div>
 
-<form method="GET" action="{% url 'app:index' %}" class="mb2">
-  <input type="text" name="keyword" placeholder="新しい発見で検索する">
-  <button type="submit" class="btn btn-flat">検索</button>
+<form method="GET" action="{% url 'app:index' %}" class="search-form">
+  <input class="search-input" type="text" name="keyword" placeholder="学んだことで検索する">
+  <button type="submit" class="fb"><i class="fas fa-search"></i></button>
 </form>
 
   <div class="fb indexFb">

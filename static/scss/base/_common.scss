@@ -18,6 +18,19 @@ body {
   }
 }
 
+.simple-table{
+  .table-content{
+    padding: 1em 0;
+    border-bottom: 1px solid var(--text-main);
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+  .title{
+    font-weight: bold;
+  }
+}
+
 a{
   word-break: break-all;
 }
@@ -442,11 +455,11 @@ button.btn {
 
 .text-blocks {
   margin-bottom: 3em;
-  border-top: 1px solid #000;
+  border-top: 1px solid var(--text-main);
 
   .text-block {
     padding: 1.5em 0;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--text-main);
 
     >p {
       font-weight: bold;

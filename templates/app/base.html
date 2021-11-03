@@ -81,6 +81,19 @@
                             <a href="{% url 'app:new_memo' %}"><span>新規日報作成</span></a>
                         </li>
                         <li class="treeview">
+                            <a class="accordion jsBtn" href="#"><span>日記管理</span></a>
+
+                            <ul class="panel">
+                                <li><a href="{% url 'app:meal_list' %}"><span>学んだこと一覧</span></a></li>
+                                <li><a href="{% url 'app:breakfast_list' %}"><span>印象に残ったこと一覧</span></a></li>
+                                <li><a href="{% url 'app:lunch_list' %}"><span>嬉しかったこと一覧</span></a></li>
+                                <li><a href="{% url 'app:dinner_list' %}"><span>頑張ったこと一覧</span></a></li>
+                                <li><a href="{% url 'app:dinner_list' %}"><span>明日したいこと一覧</span></a></li>
+                                <li><a href="{% url 'app:dinner_list' %}"><span>改善点一覧</span></a></li>
+                                <li><a href="{% url 'app:dinner_list' %}"><span>1日のまとめ一覧</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
                             <a class="accordion jsBtn" href="#"><span>食事管理</span></a>
 
                             <ul class="panel">

@@ -2,22 +2,21 @@
 {% block content %}
 <div class="heading">
     <div>
-        <h1>プロフィール更新</h1>
+        <h1>プロフィール編集</h1>
     </div>
 </div>
 <form action="" method="POST">
     {{ form.non_field_errors }}
-    <table class="table">
-        <tbody>
-            {% for field in form %}
-                <tr>
-                    <th><label for="{{ field.id_for_label }}">{{ field.label }}</label></th>
-                    <td>{{ field }} {{ field.errors }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
     {% csrf_token %}
-    <button type="submit" class="btn btn-flat" >登録する</button>
+    {% for field in form %}
+    <div class="mb1">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        <p class="p0">{{ field }} {{ field.errors }}</p>
+    </div>
+    {% endfor %}
+    <div class="tc mt2">
+    <button type="submit" class="btn btn-flat">登録する</button>
+    </div>
+
 </form>
 {% endblock %}

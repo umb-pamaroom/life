@@ -2,23 +2,30 @@
 
 {% block content %}
 
-  <div class="heading">
-      <div>
-          <h1>日報詳細</h1>
-      </div>
-  </div>
+<div class="heading">
+    <div>
+        <h1>日報詳細</h1>
+    </div>
+</div>
 
-<h2 class="mb1">{{ memo.dateData }}</h2>
+<p class="mb1 fzl2 b">{{ memo.dateData }}</p>
 
-<div class="text-blocks">
+
+<div class="accordion jsBtn simple-accodion-btn">
+    <p class="p0">日記</p>
+</div>
+
+
+<div class="panel">
+    <div class="text-blocks">
     <div class="text-block">
-        <p>新しい発見</p>
+        <p>学んだこと</p>
         <div>
             {{ memo.discovery | linebreaks | urlize }}
         </div>
     </div>
     <div class="text-block">
-        <p>一番印象に残ったこと</p>
+        <p>印象に残ったこと</p>
         <div>
             {{ memo.tired | linebreaks | urlize }}
         </div>
@@ -59,6 +66,15 @@
             {{ memo.summarize | linebreaks | urlize }}
         </div>
     </div>
+    </div>
+</div>
+
+<div class="accordion jsBtn simple-accodion-btn">
+    <p class="p0">食事</p>
+</div>
+
+<div class="panel">
+    <div class="text-blocks">
 
     {% if memo.breakfast %}
     <div class="text-block">
@@ -73,12 +89,6 @@
         <p>朝食名</p>
         <div>
             {{ memo.breakfastName }}
-        </div>
-    </div>
-    <div class="text-block">
-        <p>朝食の評価</p>
-        <div>
-            {{ memo.breakfastEvaluation }}
         </div>
     </div>
 
@@ -97,12 +107,6 @@
             {{ memo.lunchName }}
         </div>
     </div>
-    <div class="text-block">
-        <p>昼食の評価</p>
-        <div>
-            {{ memo.lunchEvaluation }}
-        </div>
-    </div>
 
     {% if memo.dinner %}
     <div class="text-block">
@@ -117,12 +121,6 @@
         <p>夕食名</p>
         <div>
             {{ memo.dinnerName }}
-        </div>
-    </div>
-    <div class="text-block">
-        <p>夕食の評価</p>
-        <div>
-            {{ memo.dinnerEvaluation }}
         </div>
     </div>
 
@@ -142,12 +140,19 @@
         </div>
     </div>
     <div class="text-block">
-        <p>間食の評価</p>
+        <p>食事の総合評価</p>
         <div>
-            {{ memo.snackEvaluation }}
+            {{ memo.mealEvaluation }}
         </div>
     </div>
-    
+    <div class="text-block">
+        <p>食事へのコメント</p>
+        <div>
+            {{ memo.mealComment }}
+        </div>
+    </div>
+    </div>
+
 </div>
 
 <div class="tc">
