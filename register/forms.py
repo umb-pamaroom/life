@@ -74,12 +74,19 @@ class UserUpdateForm(forms.ModelForm):
             field.widget.attrs['class'] = 'form-control'
 
 
+# ModelFormを継承してクラスを作成する
 class  ThemeUpdateForm(forms.ModelForm):
     """テーマ更新フォーム"""
 
     class Meta:
+        # Userモデルを使用する
         model = User
-        fields = ('theme',)
+        
+        # 表示するフィールド
+        fields = ['theme']
+        labels = {
+            'theme': 'テーマ',
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -87,6 +94,16 @@ class  ThemeUpdateForm(forms.ModelForm):
         self.label_suffix = ""
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
+
+    # Theme = forms.fields.ChoiceField(
+    #     choices=(
+    #         ('white', 'ホワイト'),
+    #         ('dark', 'ダーク')
+    #     ),
+    #     required=True,
+    #     widget=forms.widgets.Select
+    # )
+
 
 
 class MyPasswordChangeForm(PasswordChangeForm):

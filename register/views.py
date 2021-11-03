@@ -227,18 +227,8 @@ class EmailChangeComplete(LoginRequiredMixin, generic.TemplateView):
             return super().get(request, **kwargs)
 
 
-class UserUpdate(OnlyYouMixin, generic.UpdateView):
-    """ユーザー情報更新ページ"""
-    model = User
-    form_class = UserUpdateForm
-    template_name = 'register/user_form.html'  # デフォルトユーザーを使う場合に備え、きちんとtemplate名を書く
-
-    def get_success_url(self):
-        return resolve_url('register:user_detail', pk=self.kwargs['pk'])
-
-
 class ThemeUpdate(OnlyYouMixin, generic.UpdateView):
-    """ユーザー情報更新ページ"""
+    """テーマ更新ページ"""
     model = User
     form_class = ThemeUpdateForm
     template_name = 'register/theme.html'  # デフォルトユーザーを使う場合に備え、きちんとtemplate名を書く

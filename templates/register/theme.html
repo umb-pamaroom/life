@@ -6,22 +6,17 @@
     </div>
 </div>
 
-<p>現在のテーマ：{{ user.theme }}</p>
+<p class="mb1">現在のテーマ：{{ user.theme }}</p>
 
-<form action="" method="POST">
-    {{ form.non_field_errors }}
-    <table class="table">
-        <tbody>
-            {% for field in form %}
-                <tr>
-                    <th><label for="{{ field.id_for_label }}">{{ field.label }}</label></th>
-                    <td>{{ field }} {{ field.errors }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<form action="" method="POST" class="p-memo">
     {% csrf_token %}
-    <button type="submit" class="btn btn-flat" >登録する</button>
+    {% for field in form %}
+        <div>
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            <p class="p0">{{ field }} {{ field.errors }}</p>
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-flat">登録する</button>
 </form>
 
 {% endblock %}

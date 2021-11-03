@@ -63,6 +63,7 @@ class Memo(models.Model):
 
     snackEvaluation = models.IntegerField(blank=True, default='0')
 
+    # 食事へのコメント
     mealComment = models.TextField(blank=True)
 
     created_datetime = models.DateTimeField(auto_now_add=True)

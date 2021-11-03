@@ -30,4 +30,8 @@ class MemoForm(ModelForm):
             'snackEvaluation': '間食評価',
             'mealComment': '食事へのコメント',
         }
-        
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # 「:」を削除
+        self.label_suffix = ""
