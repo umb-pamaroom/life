@@ -5,7 +5,7 @@
 
   <div class="heading">
     <div>
-      <h1>日報一覧</h1>
+      <h1>共有日報一覧</h1>
     </div>
   </div>
 
@@ -15,16 +15,27 @@
 </form>
 
   <div class="fb indexFb">
-  {% for memo in memos %}
-  <div class="card">
-    <a href="{% url 'app:detail' memo.id %}">
-      <div class="fb">
-        <p class="title">{{ memo.dateData }}</p>
-        <p class="text">{{ memo.discovery }}</p>
-      </div>
-    </a>
+    {% for memo in memos %}
+    {% if user.id == memo.create_user_id  %}
+    <div class="card my">
+      <a href="{% url 'app:detail' memo.id %}">
+        <div class="fb">
+          <p class="title">{{ memo.dateData }}</p>
+          <p class="text">{{ memo.discovery }}</p>
+        </div>
+      </a>
     </div>
-  {% endfor %}
+    {% else %}
+      <div class="card">
+        <a href="{% url 'app:detail' memo.id %}">
+          <div class="fb">
+            <p class="title">{{ memo.dateData }}</p>
+            <p class="text">{{ memo.discovery }}</p>
+          </div>
+        </a>
+      </div>
+    {% endif %}
+    {% endfor %}
   </div>
 
 {% endblock %}

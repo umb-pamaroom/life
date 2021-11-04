@@ -4,6 +4,10 @@ from . import views
 app_name = 'app'
 urlpatterns = [
     path('diary/', views.index, name='index'),
+
+    # 自分の日報一覧
+    path('mydiary/', views.mydiary, name='mydiary'),
+    # path('mydiary/', views.MydiaryListView.as_view(), name='mydiary'),
     path('diary/<int:memo_id>', views.detail, name='detail'),
     # path('diary/date/<int:dateData>', views.detail, name='date'),
     path('diary/new_memo', views.new_memo, name='new_memo'),

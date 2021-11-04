@@ -21,6 +21,13 @@
         </div>
 
         <div class="panel">
+            <div style="display:none">
+                <label for="id_create_user">ユーザー</label>
+                <p class="p0"><select name="create_user" required="" id="id_create_user">
+                        <option value="{{ user.id }}" selected="{{ user.email }}">{{ user.email }}</option>
+                    </select>
+                </p>
+            </div>
             <div>
                 <label for="id_discovery">学んだこと</label>
                 <p class="p0">{{ form.discovery }}</p>

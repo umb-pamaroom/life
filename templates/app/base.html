@@ -72,13 +72,13 @@
                 <nav class="nav">
                     <ul class="list accordion-ul">
                         <li>
+                            <a href="{% url 'app:new_memo' %}" class="bgblue"><span>新規作成</span></a>
+                        </li>
+                        <li>
                             <a href="{% url 'app:index' %}"><span>共有日報一覧</span></a>
                         </li>
                         <li>
-                            <a href="{% url 'app:index' %}"><span>自分の日報一覧</span></a>
-                        </li>
-                        <li>
-                            <a href="{% url 'app:new_memo' %}"><span>新規日報作成</span></a>
+                            <a href="{% url 'app:mydiary' %}"><span>自分の日報一覧</span></a>
                         </li>
                         <li class="treeview">
                             <a class="accordion jsBtn" href="#"><span>日記管理</span></a>

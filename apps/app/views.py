@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Memo
+#ListViewのインポート
+from django.views.generic.list import ListView
 from django.shortcuts import get_object_or_404
 from .forms import MemoForm
 from django.views.decorators.http import require_POST
@@ -24,18 +26,35 @@ def index(request):
 
 
 @login_required
+def mydiary(request):
+
+  # 投稿の並び順を制御する
+  memos = Memo.objects.all().order_by('-dateData')
+  keyword = request.GET.get('keyword')
+
+  if keyword:
+      memos = memos.filter(
+          Q(discovery__icontains=keyword)
+      )
+      messages.success(request, '「{}」の検索結果'.format(keyword))
+  return render(request, 'app/mydiary.html', {'memos': memos})
+
+
+# class MydiaryListView(ListView):
+#     template_name = 'app/mydiary.html'
+#     model = Memo
+
+#     def get_queryset(self):
+#         return self.model.objects.filter(
+#             create_user=self.request.user,
+#         )
+
+
+@login_required
 def detail(request, memo_id):
   # プライマリキーをmemo_idにする
   memo = get_object_or_404(Memo, id=memo_id)
   return render(request, 'app/detail.html', {'memo': memo})
-
-
-# def date(request, memo_dateData):
-#   month = self.kwargs.get('month')
-#   year = self.kwargs.get('year')
-#   day = self.kwargs.get('day')
-#   memo = get_object_or_404(Memo, dateData=dateData)
-#   return render(request, 'app/detail.html', {'memo': memo})
 
 @login_required
 def new_memo(request):
@@ -52,8 +71,11 @@ def new_memo(request):
 def new_memo(request):
     if request.method == "POST":
         form = MemoForm(request.POST, request.FILES)
+
+        qryset = form.save()
+        qryset.create_user = request.user
         if form.is_valid():
-            form.save()
+            qryset.save()
             return redirect('app:index')
     else:
         form = MemoForm

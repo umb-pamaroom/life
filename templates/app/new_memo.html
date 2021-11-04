@@ -12,6 +12,15 @@
         {% csrf_token %}
         <div>
 
+            <!-- HTMLは必要だけど、表示する必要はない -->
+            <div style="display:none">
+                <label>ユーザー</label>
+                <p class="p0"><select name="create_user" required="" id="id_create_user">
+                        <option value="{{ user.id }}" selected="{{ user.email }}">{{ user.email }}</option>
+                    </select></p>
+            </div>
+            <!-- //HTMLは必要だけど、表示する必要はない -->
+
             <div>
                 <label>日付</label>
                 <p class="p0">{{ form.dateData }}</p>

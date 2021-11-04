@@ -1,4 +1,3 @@
-
 footer {
   padding: 6em 2em 3em;
   font-size: 14px;
@@ -8,60 +7,72 @@ body {
   background: var(--bg-main);
 }
 
-.notable{
+.notable {
   display: block !important;
-  tr{
+
+  tr {
     display: block !important;
-    th,td{
+
+    th,
+    td {
       display: block !important;
     }
   }
 }
 
-.simple-table{
-  .table-content{
+.bgblue{
+  background: var(--btn-success);
+}
+.simple-table {
+  .table-content {
     padding: 1em 0;
     border-bottom: 1px solid var(--text-main);
-    &:last-child{
+
+    &:last-child {
       border-bottom: none;
     }
   }
-  .title{
+
+  .title {
     font-weight: bold;
   }
 }
 
-a{
+a {
   word-break: break-all;
 }
 
-.t-link{
+.t-link {
   text-decoration: underline;
   color: var(--text-link);
-  &:hover{
+
+  &:hover {
     text-decoration: none;
   }
 }
+
 // 共通
-.mb05{
+.mb05 {
   margin-bottom: .5em;
 }
-.container-before{
+
+.container-before {
   padding-top: 50px;
 }
 
-.link-p{
+.link-p {
   color: rgb(112, 112, 112);
 }
 
-.p0{
+.p0 {
   padding: 0 !important;
 }
+
 .card {
   padding: .8em;
   width: 25%;
 
-  >a{
+  >a {
     background: var(--bg-main);
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
@@ -82,7 +93,13 @@ a{
     }
   }
 
-  >.card-unit{
+  &.my {
+    >a {
+      background: var(--bg-header);
+    }
+  }
+
+  >.card-unit {
     padding: 0;
   }
 
@@ -104,7 +121,8 @@ input {
 
 input {
   height: auto !important;
-width: 100%;
+  width: 100%;
+
   &+span {
     display: block;
   }
@@ -115,14 +133,17 @@ width: 100%;
 
   .btn {
     margin-top: 1em !important;
+
     &:hover {
       background: #ddd;
     }
   }
-  .btn-wrap{
+
+  .btn-wrap {
     text-align: center;
   }
-  .btn-close{
+
+  .btn-close {
     padding: .8em;
     margin: 0 auto;
     background: rgb(104, 104, 104);
@@ -169,7 +190,8 @@ width: 100%;
     background: var(--bg-main);
     overflow-y: auto;
     z-index: 1;
-    img{
+
+    img {
       width: 100%;
     }
   }
@@ -201,21 +223,21 @@ width: 100%;
   .modal {
     &.is-open {
       -webkit-animation: modal_open .5s ease forwards;
-              animation: modal_open .5s ease forwards;
+      animation: modal_open .5s ease forwards;
 
       .modal-inner {
         -webkit-animation: modal_inner_open .5s ease forwards;
-                animation: modal_inner_open .5s ease forwards;
+        animation: modal_inner_open .5s ease forwards;
       }
     }
 
     &.is-close {
       -webkit-animation: modal_close .5s ease forwards;
-              animation: modal_close .5s ease forwards;
+      animation: modal_close .5s ease forwards;
 
       .modal-inner {
         -webkit-animation: modal_inner_close .5s ease forwards;
-                animation: modal_inner_close .5s ease forwards;
+        animation: modal_inner_close .5s ease forwards;
 
       }
     }
@@ -318,20 +340,22 @@ width: 100%;
   }
 }
 
-.fb.three{
+.fb.three {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  >*{
+
+  >* {
     width: 33.3333% !important;
-    max-height:150px;
+    max-height: 150px;
     overflow: hidden;
-    >*{
+
+    >* {
       width: 100%;
       -o-object-fit: cover;
-         object-fit: cover;
+      object-fit: cover;
     }
-  } 
+  }
 }
 
 input[type="file"] {
@@ -346,7 +370,7 @@ input[type="file"] {
   width: 100%;
   background: var(--btn-success);
   color: #fff;
-  border:none;
+  border: none;
   padding: .6em;
   font-weight: bold;
   margin-bottom: .4em;
@@ -356,9 +380,10 @@ input[type="file"] {
   max-width: 800px;
   margin: 0 auto;
 
-  .selectbox{
+  .selectbox {
     margin-bottom: 1.5em;
   }
+
   p {
     display: flex;
     flex-wrap: wrap;
@@ -470,7 +495,7 @@ button.btn {
   }
 }
 
-.container-before{
+.container-before {
   padding: 0 1em;
 }
 
@@ -509,10 +534,11 @@ button.btn {
       padding: .6em 0;
     }
   }
-  .fb.three{
-width: calc(100% + 64px);
-position: relative;
-right: 2em;
+
+  .fb.three {
+    width: calc(100% + 64px);
+    position: relative;
+    right: 2em;
   }
 }
 
