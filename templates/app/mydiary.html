@@ -12,7 +12,7 @@
   <input class="search-input" type="text" name="keyword" placeholder="学んだことで検索する">
   <button type="submit" class="fb"><i class="fas fa-search"></i></button>
 </form>
-
+{{ user.id }}
 <div class="fb indexFb">
   {% for memo in memos %}
     {% if user.id == memo.create_user_id  %}
