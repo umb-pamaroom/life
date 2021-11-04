@@ -21,7 +21,7 @@ class Condition(models.TextChoices):
 # Memoモデルを作成する
 class Memo(models.Model):
 
-    create_user = models.ForeignKey(User, related_name='relate_user', on_delete=models.CASCADE, default=11)
+    create_user = models.ForeignKey(User, related_name='relate_user', on_delete=models.CASCADE, default=12)
 
     # 日付
     dateData = models.DateField(default=timezone.now, blank=True)
